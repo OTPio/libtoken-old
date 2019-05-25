@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftBase32
 import CommonCrypto
 
 struct Generator: CustomStringConvertible {
