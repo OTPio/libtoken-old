@@ -9,6 +9,7 @@ final class libtokenTests: XCTestCase {
         let hotp = try! Token(from: hurl)
         print(totp)
         print("Code: \(totp.password(format: true)) (\(totp.timeRemaining(reversed: true))s remaining)")
+        print(totp.serialize())
         print(hotp)
     }
 

@@ -78,4 +78,16 @@ extension Token {
         }
         return FontAwesome(rawValue: iconString)
     }
+    
+    static func extractInternalItems(params: [URLQueryItem]?) -> (Int?, Bool?) {
+        var rtr: (Int?, Bool?) = (nil, nil)
+        if let position = params?.filter({$0.name == "position"}).first?.value {
+            rtr.0 = Int(position)
+        }
+        if let flag = params?.filter({$0.name == "today"}).first?.value {
+            rtr.1 = Bool(flag)
+        }
+        
+        return rtr
+    }
 }
