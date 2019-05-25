@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TokenError: Error {
+public enum TokenError: Error {
     case invalidFormat, urlComponents
     case issuerMissing, issuerInvalid, userInvalid, secretMissing, secretInvalid, hotpCounterMissing, algorithmInvalid
     case invalidType

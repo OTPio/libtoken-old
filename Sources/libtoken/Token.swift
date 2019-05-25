@@ -9,8 +9,8 @@ import Foundation
 import SwiftBase32
 import FontAwesome_swift
 
-struct Token: CustomStringConvertible {
-    public let generator: Generator
+public struct Token: CustomStringConvertible {
+    let generator: Generator
     public let issuer   : String
     public let user     : String
     public let icon     : FontAwesome
