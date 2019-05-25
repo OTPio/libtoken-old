@@ -1,0 +1,3 @@
+[submodule "Sources/FontAwesomeSwift"]
+	path = Sources/FontAwesomeSwift
+	url = git@github.com:thii/FontAwesome.swift
