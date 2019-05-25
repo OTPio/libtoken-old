@@ -18,9 +18,9 @@ extension FontAwesome {
 
 extension String {
     public func closestBrand() -> FontAwesome {
-        let keys = Array(FontAwesomeBrandIcons.keys).sortedByFuzzyMatchPattern(self)
+        let keys = Array(FontAwesomeIcons.keys).sortedByFuzzyMatchPattern(self)
         let firstKey = keys.first!
-        let value = FontAwesomeBrandIcons[firstKey]!
+        let value = FontAwesomeIcons[firstKey]!
         return FontAwesome(rawValue: value)!
     }
 }

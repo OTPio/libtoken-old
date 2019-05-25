@@ -11,10 +11,10 @@ Pod::Spec.new do |spec|
     spec.swift_version = "5.0"
 
     spec.ios.deployment_target = '12.0'
-    spec.source_files = 'Sources/libtoken/*.swift'
+    spec.source_files = 'Sources/libtoken/**/*.swift'
 
     spec.dependency 'FontAwesome.swift'
-    spec.dependency 'Base32'
+    spec.dependency 'SwiftBase32'
 
     #spec.watchos.deployment_target = '5.0'
     #spec.watchos.source_files = 'Source/watchos/*.swift'

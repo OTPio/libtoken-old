@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Base32
+import SwiftBase32
 import FontAwesome_swift
 
 struct Token: CustomStringConvertible {
