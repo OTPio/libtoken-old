@@ -15,7 +15,7 @@ public struct Token: CustomStringConvertible {
     public let user     : String
     public let icon     : FontAwesome
     
-    var description: String {
+    public var description: String {
         var rtr = ""
         rtr += "\(issuer): \(user)\n"
         rtr += generator.description
