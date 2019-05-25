@@ -11,10 +11,11 @@ let package = Package(
         .library(name: "libtoken", targets: ["libtoken"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/kishikawakatsumi/KeychainAccess", from: "3.2.0")
     ],
     targets: [
         .target(name: "FontAwesome.swift", path: "Sources/FontAwesomeSwift/FontAwesome"),
-        .target(name: "libtoken", dependencies: [.target(name: "FontAwesome.swift")]),
+        .target(name: "libtoken", dependencies: [.target(name: "FontAwesome.swift"), "KeychainAccess"]),
         .testTarget(name: "libtokenTests", dependencies: ["libtoken"]),
     ]
 )

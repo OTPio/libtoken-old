@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name = 'libtoken'
-    spec.version = '1.1.0'
+    spec.version = '1.1.1'
 
     spec.license = { :type => 'MIT', :file => 'LICENSE' }
     spec.homepage = 'https://github.com/otpio/libtoken'
@@ -15,6 +15,7 @@ Pod::Spec.new do |spec|
 
     spec.dependency 'FontAwesome.swift'
     spec.dependency 'SwiftBase32'
+    spec.dependency 'KeychainAccess'
 
     #spec.watchos.deployment_target = '5.0'
     #spec.watchos.source_files = 'Source/watchos/*.swift'

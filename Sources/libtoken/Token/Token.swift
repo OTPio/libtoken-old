@@ -8,7 +8,7 @@
 import Foundation
 import FontAwesome_swift
 
-public struct Token: CustomStringConvertible {
+public struct Token: CustomStringConvertible, Equatable {
     let generator: Generator
     public let issuer   : String
     public let user     : String
@@ -97,5 +97,11 @@ public struct Token: CustomStringConvertible {
         components.queryItems = queryItems
         
         return components.url!
+    }
+    
+    public static func ==(l: Token, r: Token) -> Bool {
+        return (l.generator == r.generator) &&
+               (l.user == r.user) &&
+               (l.issuer == r.issuer)
     }
 }

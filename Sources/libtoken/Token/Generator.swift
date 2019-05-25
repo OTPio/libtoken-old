@@ -8,7 +8,7 @@
 import Foundation
 import CommonCrypto
 
-struct Generator: CustomStringConvertible {
+struct Generator: CustomStringConvertible, Equatable {
     let type     : TokenType
     let digits   : Int
     let secret   : Data
