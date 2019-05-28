@@ -8,13 +8,13 @@
 import Foundation
 import CommonCrypto
 
-struct Generator: CustomStringConvertible, Equatable {
-    let type     : TokenType
-    let digits   : Int
-    let secret   : Data
-    let algorithm: Algorithm
+public struct Generator: CustomStringConvertible, Equatable {
+    public var type     : TokenType
+    public var digits   : Int
+    public let secret   : Data
+    public var algorithm: Algorithm
     
-    var description: String {
+    public var description: String {
         var rtr = ""
         rtr += "\t\(algorithm.description) \(digits)-digit "
         switch type {
@@ -35,7 +35,7 @@ struct Generator: CustomStringConvertible, Equatable {
         self.algorithm = hash
     }
     
-    enum TokenType {
+    public enum TokenType {
         case hotp(_ counter: UInt64)
         case totp(_ interval: TimeInterval)
         

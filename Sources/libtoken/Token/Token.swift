@@ -9,13 +9,13 @@ import Foundation
 import FontAwesome_swift
 
 public struct Token: CustomStringConvertible, Equatable {
-    let generator: Generator
-    public let issuer   : String
-    public let user     : String
-    public let icon     : FontAwesome
-    
-    internal var position: Int
-    internal var todayFlag: Bool
+    public var generator: Generator
+    public var issuer   : String
+    public var user     : String
+    public var icon     : FontAwesome
+
+    public var position: Int
+    public var todayFlag: Bool
     
     public var description: String {
         var rtr = ""
@@ -55,7 +55,7 @@ public struct Token: CustomStringConvertible, Equatable {
         self.position = position ?? 0
         self.todayFlag = today ?? false
     }
-    
+
     public func password(at date: Date = Date(), format: Bool = false) -> String {
         return generator.password(at: date, format: format)
     }
@@ -71,7 +71,7 @@ public struct Token: CustomStringConvertible, Equatable {
     mutating func set(todayFlag: Bool) {
         self.todayFlag = todayFlag
     }
-    
+
     public func serialize() -> URL {
         var components = URLComponents()
         components.scheme = "otpauth"
@@ -93,7 +93,7 @@ public struct Token: CustomStringConvertible, Equatable {
             components.host = "totp"
         }
         
-        components.path = "/\(user):\(issuer)"
+        components.path = "/\(issuer):\(user)"
         components.queryItems = queryItems
         
         return components.url!
